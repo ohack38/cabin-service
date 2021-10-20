@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+
+import "react-datepicker/dist/react-datepicker.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 import './App.css';
+import PrivateRoute from './components/PrivateRoute';
+import LoginComponent from './components/LoginComponent';
+import MainComponent from './components/MainComponent';
+import OrderComponent from './components/OrderComponent';
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <PrivateRoute exact path="/" component={MainComponent} />
+          <PrivateRoute exact path="/orders" component={OrderComponent} />
+          <Route path="/login" component={LoginComponent} />
+        </Switch>
+      </div>
+    </Router>
+    
   );
 }
 

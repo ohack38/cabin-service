@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.cabinComponent {
+  height: 50px;
+  width: 100%;
+
+}
+.mainComponent {
+ 
+  margin: 20px;
+  border: 1px solid black;
+}
