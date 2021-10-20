@@ -1,7 +1,7 @@
 import axios from "axios"
 
-const nodeUrl = 'https://moln-node.azurewebsites.net'
-const flaskUrl = 'https://sheltered-beach-83949.herokuapp.com'
+const nodeUrl = process.env.REACT_APP_NODE_URL
+const flaskUrl = process.env.REACT_APP_FLASK_URL
 
 export const login = (email, password) => {
     return axios.post(nodeUrl + '/users/login/', {

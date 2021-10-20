@@ -69,7 +69,7 @@ const LoginComponent = () => {
 
 
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <Form onSubmit={handleLogin} ref={form}>
             <div className="">
                 <label htmlFor="email">Email</label>
@@ -87,7 +87,7 @@ const LoginComponent = () => {
                 <label htmlFor="password">Password</label>
                 <Input
                   type="password"
-                  className=""
+                  className="form-control"
                   name="password"
                   value={password}
                   onChange={onChangePassword}
